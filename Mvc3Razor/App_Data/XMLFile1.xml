@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Product>
+    <ProductId>1</ProductId>
+    <ProductName> tomatoes  </ProductName>
+    <ProductPrice> 1.5 </ProductPrice>
+  </Product>
+ <Product>
+    <ProductId>2</ProductId>
+    <ProductName> lettuce  </ProductName>
+    <ProductPrice> 8 </ProductPrice>
+  </Product>
+
+</Products>
+
+    
+    
