@@ -25,9 +25,22 @@ namespace DesktopEnvironmentManager
             InitializeComponent();
         }
 
+        //declaring variables
+
+        
+        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            // getting the values 
+            var productTextBox = int.Parse(ProductText.Text);
+            var priceTextBox = int.Parse(PriceText.Text);
+
+            //show the value 
+            // MessageBox.Show("This is your total: " + (priceTextBox * productTextBox));
+            MessageBox.Show("amount calculated " );
+
+            this.TotalTextBox.Text = "Your total:" + (priceTextBox * productTextBox);
 
         }
     }
