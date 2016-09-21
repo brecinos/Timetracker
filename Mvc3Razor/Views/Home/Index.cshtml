@@ -11,6 +11,47 @@
         @Html.ActionLink("Create New", "Create")
     </p>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#divTabs").tabs();
+        $("#date").datepicker({ showButtonPanel: true });
+        $("#btnTest").button();
+        $("#date2").datepicker();
+    });
+</script>
+<style type="text/css">
+    .ui-datepicker { font-size:8pt !important}
+    .ui-button { font-size:10pt !important}
+    .ui-tabs { font-size:10pt !important}
+</style>
+ 
+<h2>Index</h2>
+<div id="divTabs" style="width: 400px;">
+    <ul>
+        <li><a href="#tabTest">Test 1</a></li>
+        <li><a href="#tabTest2">Test 2</a></li>
+        <li><a href="#tabTest3">Test 3</a></li>
+    </ul>
+    <div id="tabTest">
+        <input id="date" type="text" style="width: 100px;" />
+        <br />
+        <input type="button" id="btnTest" value="A Testbutton" />
+    </div>
+    <div id="tabTest2">
+        This is the second tab.
+    </div>
+    <div id="tabTest3">
+        <p>This is the third tab.</p>
+    </div>
+</div>
+
+<div >
+    <input type="text" name="date2" id="date2" />
+    <input class="ui-button ui-widget ui-corner-all" type="button" value="A submit butto" />
+</div>
+
+    
+
     <table>
         <tr>
             <th></th>
