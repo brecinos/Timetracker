@@ -1,0 +1,107 @@
+﻿@Model IEnumerable
+<MvcRazor.Models.ProjectModels> 
+
+@{
+    ViewBag.Title = "AddEditProject";
+}
+
+<h2>AddEditProject</h2>
+
+
+
+<style type="text/css">  
+  
+.topDiv  
+  
+{  
+  
+width: 50%;  
+  
+margin: 10px auto;  
+  
+background-color: #f2f2f2;  
+  
+text-align: center;  
+  
+padding: 2%;  
+  
+}  
+  
+  
+.innerDiv  
+  
+{  
+  
+margin: 0 auto;  
+  
+padding: 1%;  
+  
+color: Gray;  
+  
+}  
+  
+  
+</style>  
+  
+@using (Html.BeginForm())  
+  
+{  
+  
+  
+  
+<div class="topDiv">  
+    <table>  
+        <tr>  
+            <h2>Add/Edit User</h2>  
+        </tr>  
+        <tr>  
+            <td>  
+  
+@Html.LabelFor(m => m.ProjectName) :  
+  
+</td>  
+            <td>  
+                <div class="innerDiv">  
+  
+@Html.TextBoxFor(m => m.ProjectName)  
+  
+@Html.ValidationMessageFor(m => m.ProjectName)  
+  
+</div>  
+            </td>  
+        </tr>  
+        <tr>  
+            <td>  
+  
+@Html.LabelFor(m => m.Location) :  
+  
+</td>  
+            <td>  
+                <div class="innerDiv">  
+  
+@Html.TextBoxFor(m => m.Location)  
+  
+@Html.ValidationMessageFor(m => m.ProjectName)  
+  
+</div>  
+            </td>  
+        </tr>  
+        <tr>  
+            <td colspan="2">  
+                <div class="innerDiv">  
+                    <input id="btnAdd" type="submit" value="@if (Model.IsEdit)  
+  
+{  
+                        <text>Update</text>}  
+  
+else  
+  
+{  
+                        <text>Add</text>}" style=" width:75px" />  
+                    </div>  
+                </td>  
+            </tr>  
+        </table>  
+    </div>  
+  
+}  

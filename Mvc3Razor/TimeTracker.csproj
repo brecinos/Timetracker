@@ -76,15 +76,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProjectModels.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Products.xml" />
     <Content Include="App_Data\XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -146,6 +152,7 @@
     <Content Include="Content\themes\cupertino\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="XML\ProjectList.xml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -191,6 +198,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <Content Include="Views\PriceCalculation\index.cshtml" />
+    <Content Include="Views\PriceCalculation\ViewPagePriceCalculation.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AddEditProject.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

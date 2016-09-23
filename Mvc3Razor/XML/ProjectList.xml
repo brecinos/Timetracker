@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Projects>  
+    <Project>  
+        <Id>1</Id>  
+        <ProjectName>The Primus</ProjectName>  
+        <Location>Paris</Location>  
+    </Project>  
+    <Project>  
+        <Id>2</Id>  
+        <ProjectName>DLF</ProjectName>  
+        <Location>Montreal</Location>  
+    </Project>  
+    <Project>  
+        <Id>4</Id>  
+        <ProjectName>Dev Builders</ProjectName>  
+        <Location>Shawinigan</Location>  
+    </Project>  
+</Projects>  
+
+
