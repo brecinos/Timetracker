@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<countries>
+  <country>
+    <id>1</id>
+    <continent>Europe</continent>
+    <name>Poland</name>
+    <language>polish</language>
+    <capital>Warsaw</capital>
+    <area>312675555555</area>
+    <population>38168860</population>
+    <callcode>48</callcode>
+  </country>
+  <country>
+    <id>3</id>
+    <continent>Europe</continent>
+    <name>Germany</name>
+    <language>german</language>
+    <capital>Berlin</capital>
+    <area>357021</area>
+    <population>80399300</population>
+    <callcode>49</callcode>
+  </country>
+  <country>
+    <id>4</id>
+    <continent>america</continent>
+    <name>yes</name>
+    <language>english</language>
+    <capital>lsls</capital>
+    <area>6575111111111111111</area>
+    <population>9888</population>
+    <callcode>8596</callcode>
+  </country>
+</countries>

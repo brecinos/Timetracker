@@ -1,0 +1,66 @@
+﻿@model IEnumerable<countries.Models.Country>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Countries</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Continent
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Language
+        </th>
+        <th>
+            Capital
+        </th>
+        <th>
+            Area
+        </th>
+        <th>
+            Population
+        </th>
+        <th>
+            Calling Code
+        </th>
+    </tr>
+
+@foreach (var country in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=country.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=country.id })
+        </td>
+        <td>
+            @country.continent
+        </td>
+        <td>
+            @country.name
+        </td>
+        <td>
+            @country.language
+        </td>
+        <td>
+            @country.capital
+        </td>
+        <td>
+            @country.area
+        </td>
+        <td>
+            @country.population
+        </td>
+        <td>
+            @country.callcode
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<typexs>
+  <type>
+    <id>1</id>
+    <name>Identification</name>
+    <callcode>1001</callcode>
+  </type>
+  <type>
+    <id>2</id>
+    <name>GenerateNumber</name>
+    <callcode>1002</callcode>
+  </type>
+  <type>
+    <id>3</id>
+    <name>newone</name>
+    <callcode>22343</callcode>
+  </type>
+  <type>
+    <id>4</id>
+    <name>xxert</name>
+    <callcode>67898</callcode>
+    <continent>4</continent>
+  </type>
+</typexs>

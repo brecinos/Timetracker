@@ -1,0 +1,59 @@
+﻿@model persons.Models.Person
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Persons</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstname)
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.firstname)
+           @Html.ValidationMessageFor(model => model.firstname) 
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastname)
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.lastname)
+           @Html.ValidationMessageFor(model => model.lastname) 
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.address)
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.address)
+           @Html.ValidationMessageFor(model => model.address) 
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telephone)
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.telephone)
+           @Html.ValidationMessageFor(model => model.telephone) 
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.age)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.age)
+            @Html.ValidationMessageFor(model => model.age)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

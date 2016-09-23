@@ -1,0 +1,75 @@
+﻿@model countries.Models.Country
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Countries</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.continent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.continent)
+            @Html.ValidationMessageFor(model => model.continent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+           @Html.EditorFor(model => model.name)
+           @Html.ValidationMessageFor(model => model.name) 
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.language)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.language)
+            @Html.ValidationMessageFor(model => model.language)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.capital)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.capital)
+            @Html.ValidationMessageFor(model => model.capital)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.area)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.area)
+            @Html.ValidationMessageFor(model => model.area)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.population)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.population)
+            @Html.ValidationMessageFor(model => model.population)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.callcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.callcode)
+            @Html.ValidationMessageFor(model => model.callcode)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

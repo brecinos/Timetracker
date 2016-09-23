@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<persons>
+  <person>
+    <id>1</id>
+    <firstname>john</firstname>
+    <lastname>smith</lastname>
+    <address>my street 345</address>
+    <telephone>888-3256-9080</telephone>
+    <age>33</age>
+    <person>1</person>
+  </person>
+</persons>

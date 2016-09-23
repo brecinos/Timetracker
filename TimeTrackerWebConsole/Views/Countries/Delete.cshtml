@@ -1,0 +1,32 @@
+﻿@model countries.Models.Country
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Country</legend>
+    <div class="validation-summary-errors">@ViewBag.ErrorMsg</div>
+    <div class="display-label"><b>Continent</b></div> <br />
+    <div class="display-field">@Model.continent</div> <br />
+
+    <div class="display-label"><b>Name</b></div> <br />
+    <div class="display-field">@Model.name</div> <br />
+
+    <div class="display-label"><b>Capital</b></div> <br />
+    <div class="display-field">@Model.capital</div> <br />
+
+    <div class="display-label"><b>Language</b></div> <br />
+    <div class="display-field">@Model.language</div> <br />
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
+

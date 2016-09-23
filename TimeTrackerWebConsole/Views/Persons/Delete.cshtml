@@ -1,0 +1,25 @@
+﻿@model persons.Models.Person
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Country</legend>
+    <div class="validation-summary-errors">@ViewBag.ErrorMsg</div>
+    
+    <div class="display-label"><b>First Name</b></div> <br />
+    <div class="display-field">@Model.firstname</div> <br />
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+
+
