@@ -22,14 +22,6 @@ namespace types.Models
                          (uint)type.Element("callcode"));
             allTypes.AddRange(types.ToList<Typex>());
 
-
-
-            //var countries = from country in typesData.Descendants("country")
-            //               select new Type((int)country.Element("id"), country.Element("name").Value,
-            //               country.Element("continent").Value, country.Element("language").Value,
-            //               country.Element("capital").Value, (ulong)country.Element("area"),(ulong)country.Element("population"),
-            //               (uint)country.Element("callcode"));
-            //allTypes.AddRange(countries.ToList<Type>());
         }
         // return a list of all countries
         public IEnumerable<Typex> GetTypes()

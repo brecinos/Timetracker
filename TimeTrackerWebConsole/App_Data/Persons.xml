@@ -7,6 +7,13 @@
     <address>my street 345</address>
     <telephone>888-3256-9080</telephone>
     <age>33</age>
-    <person>1</person>
+  </person>
+  <person>
+    <id>2</id>
+    <firstname>martin</firstname>
+    <lastname>Guay</lastname>
+    <address>rue</address>
+    <telephone>11223344</telephone>
+    <age>41</age>
   </person>
 </persons>

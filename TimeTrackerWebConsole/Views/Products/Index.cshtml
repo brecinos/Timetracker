@@ -1,0 +1,36 @@
+﻿@model IEnumerable<products.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Person</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+         Name
+        </th>
+        <th>
+         Description
+        </th>
+    </tr>
+
+@foreach (var product in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=product.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=product.id })
+        </td>
+        <td>
+            @product.name
+        </td>
+        <td>
+            @product.description
+        </td>
+    </tr>
+}
+
+</table>

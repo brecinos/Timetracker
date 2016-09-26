@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerXML.Helper", "Tracke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopEnvironmentManager", "DesktopEnvironmentManager\DesktopEnvironmentManager.csproj", "{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerWebConsole", "..\TimeTrackerWebConsole\TimeTrackerWebConsole.csproj", "{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerWebConsole", "TimeTrackerWebConsole\TimeTrackerWebConsole.csproj", "{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

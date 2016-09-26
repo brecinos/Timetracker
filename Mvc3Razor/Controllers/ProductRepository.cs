@@ -8,7 +8,7 @@ namespace Mvc3Razor.Controllers
 {
     public class ProductRepository
     {
-        private List<> allCountries;
+        private List<Products> allCountries;
         private XDocument countriesData;
         //constructor
         public CountriesRepository()

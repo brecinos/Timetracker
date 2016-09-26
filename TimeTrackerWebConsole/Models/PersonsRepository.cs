@@ -40,8 +40,8 @@ namespace persons.Models
 
             personsData.Root.Add(new XElement("person", new XElement("id", person.id), new XElement("firstname", person.firstname),
                                  new XElement("lastname", person.lastname), new XElement("address", person.address), new XElement("telephone", person.telephone), 
-                               new XElement("age", person.age.ToString()   )  ) 
-                               );
+                                 new XElement("age", person.age.ToString())  ) 
+                                );
 
             personsData.Save(HttpContext.Current.Server.MapPath("~/App_Data/Persons.xml"));
         }
@@ -54,7 +54,7 @@ namespace persons.Models
         {
             XElement node = personsData.Root.Elements("person").Where(i => (int)i.Element("id") == person.id).FirstOrDefault();
 
-            node.SetElementValue("person", person.id);
+            node.SetElementValue("id", person.id);
             node.SetElementValue("firstname", person.firstname);
             node.SetElementValue("lastname", person.lastname);
             node.SetElementValue("address", person.address);
