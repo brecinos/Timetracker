@@ -56,6 +56,9 @@
         <tr>
             <th></th>
             <th>
+                Object ID
+            </th>
+            <th>
                 UserName
             </th>
             <th>
@@ -80,6 +83,9 @@
                 @Html.ActionLink("Details", "Details", new {  id=item.UserName  }) |
                 @Html.ActionLink("Delete", "Delete", new {  id=item.UserName  })
             </td>
+            <td>
+                @item._id
+            </td> 
             <td>
                 @item.UserName
             </td>

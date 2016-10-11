@@ -30,7 +30,6 @@ namespace Mvc3Razor.Models
             {
 
                 //ObjectId id = new ObjectId();   
-
                 const string ConnectionString = "mongodb://localhost/?safe=true";
                 var server = MongoServer.Create(ConnectionString);
                 var blog = server.GetDatabase("blog");

@@ -24,12 +24,16 @@ namespace Mvc3Razor.Models {
         [StringLength(8, MinimumLength = 3)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
+
         [Required]
         [StringLength(9, MinimumLength = 2)]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+
         [Required()]
         public string City { get; set; }
+
         // adding new employee code for time tracking
         [Required]
         [StringLength(4, MinimumLength=2)]
@@ -39,70 +43,96 @@ namespace Mvc3Razor.Models {
 
     public class Users {
 
-        public Users() {
+        ObjectId id = new ObjectId();
+        MongoClient client = null;
+        MongoServer server = null;
+        MongoDatabaseSettings ser = null;
+        MongoDatabase database = null;
+        MongoCollection UserDetailscollection = null;
 
-            _usrList.Add(new UserModel
-            {
-                UserName = "BenM",
-                FirstName = "Ben",
-                LastName = "Miller",
-                City = "Seattle",
-                EmployeeCode = "E101"
-            });
-            _usrList.Add(new UserModel
-            {
-                UserName = "AnnB",
-                FirstName = "Ann",
-                LastName = "Beebe",
-                City = "Boston",
-                EmployeeCode = "E102"
-            });
+        string connectionString = "mongodb://localhost";
+        private List<UserModel> _UserList = new List<UserModel>();
 
-            UserRepositary T= new UserRepositary();
-            
+        public Users() 
+        {                  
+
+            try
+            {         
+                server = MongoServer.Create(connectionString);
+                var blog = server.GetDatabase("blog");
+                UserDetailscollection = blog.GetCollection<UserModel>("UserModel");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
+
+        public IEnumerable<UserModel> GetAllUsers()
+        {
+            if (Convert.ToInt32(UserDetailscollection.Count()) > 0)
+            {
+                _UserList.Clear();
+
+                var AllUsers = UserDetailscollection.FindAs(typeof(UserModel), Query.NE("UserName", "null"));
+
+                if (AllUsers.Count() > 0)
+                {
+                    foreach (UserModel user in AllUsers)
+                    {
+                        _UserList.Add(user);
+                    }
+                }
+            }
+
+            var result = _UserList.AsQueryable();
+            return result;
+        }
+
+        public UserModel Add(UserModel UM)
+        {
+            UserDetailscollection.Save(UM);
+            return UM;
+        }     
 
         public List<UserModel> _usrList = new List<UserModel>();
 
-        public void Update(UserModel umToUpdate) {
+        public bool Update(string objectid, UserModel UM)
+        {
+            UpdateBuilder upBuilder = MongoDB.Driver.Builders.Update
+                .Set("UserName", UM.UserName)
+                .Set("FirstName", UM.FirstName)
+                .Set("LastName", UM.LastName)
+                .Set("City", UM.City)
+                .Set("EmployeeCode", UM.EmployeeCode);
 
-            foreach (UserModel um in _usrList) {
-                if (um.UserName == umToUpdate.UserName) {
-                    _usrList.Remove(um);
-                    _usrList.Add(umToUpdate);
-                    break;
-                }
+            UserDetailscollection.Update(Query.EQ("UserName", objectid), upBuilder);
+
+            return true;
+        }     
+             
+
+        public bool Remove(string objectid) 
+        {
+
+            UserDetailscollection.Remove(Query.EQ("UserName", objectid));
+            return true; 
+        }
+
+        public UserModel GetUserByID(string id)
+        {
+            UserModel SearchUser = null;
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                SearchUser = (UserModel)UserDetailscollection.FindOneAs(typeof(UserModel), Query.EQ("UserName", id));
             }
-        }
 
-        public void Create(UserModel umToUpdate) {
-            foreach (UserModel um in _usrList) {
-                if (um.UserName == umToUpdate.UserName) {
-                    throw new System.InvalidOperationException("Duplicate username: " + um.UserName);
-                }
-            }
-            _usrList.Add(umToUpdate);
-        }
-
-        public void Remove(string usrName) {
-
-            foreach (UserModel um in _usrList) {
-                if (um.UserName == usrName) {
-                    _usrList.Remove(um);
-                    break;
-                }
-            }
-        }
-
-        public UserModel GetUser(string uid) {
-            UserModel usrMdl = null;
-
-            foreach (UserModel um in _usrList)
-                if (um.UserName == uid)
-                    usrMdl = um;
-
-            return usrMdl;
-        }
+            return SearchUser;
+        }     
+       
 
     }
 }

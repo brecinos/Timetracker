@@ -6,24 +6,22 @@
 }
 
 <h2>Edit</h2>
-    @using (Html.BeginForm()) {
-	@Html.Hidden("UserName", Model.UserName)   
-        @Html.ValidationSummary(true)
-        
-        <fieldset>
-            <legend>Fields</legend>
-            
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UserName)
+    @using (Html.BeginForm())
+    {  
+
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Fields</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+          
+            @Html.TextBoxFor(model => model.UserName, new { @readonly = "readonly" })			
             </div>
-            <div class="editor-field">
-               @*
-			@Html.TextBoxFor(model => model.UserName)
-	            	@Html.ValidationMessageFor(model => model.UserName)
-		*@
-			@Html.DisplayFor(model => model.UserName)
-            </div>
-            
+
             <div class="editor-label">
                 @Html.LabelFor(model => model.FirstName)
             </div>
@@ -31,7 +29,7 @@
                 @Html.TextBoxFor(model => model.FirstName)
                 @Html.ValidationMessageFor(model => model.FirstName)
             </div>
-            
+
             <div class="editor-label">
                 @Html.LabelFor(model => model.LastName)
             </div>
@@ -39,7 +37,7 @@
                 @Html.TextBoxFor(model => model.LastName)
                 @Html.ValidationMessageFor(model => model.LastName)
             </div>
-            
+
             <div class="editor-label">
                 @Html.LabelFor(model => model.City)
             </div>
@@ -47,7 +45,15 @@
                 @Html.TextBoxFor(model => model.City)
                 @Html.ValidationMessageFor(model => model.City)
             </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeCode)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EmployeeCode, new { @readonly = "readonly" })
             
+        </div>
+
             <p>
                 <input type="submit" value="Save" />
             </p>
