@@ -45,7 +45,8 @@ namespace Mvc3Razor.Controllers {
         }
 
         [HttpPost]
-        public ViewResult Create(UserModel um) {
+        public ViewResult Create(UserModel um) 
+        {
 
             if (!TryUpdateModel(um)) {
                 ViewBag.updateError = "Create Failure";

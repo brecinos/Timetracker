@@ -33,6 +33,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +54,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
     <Reference Include="System" />
@@ -82,6 +92,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IUserRepositary.cs" />
+    <Compile Include="Models\UserRepositary.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProjectModels.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -89,51 +101,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Products.xml" />
+    <Content Include="App_Data\Products.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\themes\base\accordion.css" />
-    <Content Include="Content\themes\base\all.css" />
-    <Content Include="Content\themes\base\autocomplete.css" />
-    <Content Include="Content\themes\base\base.css" />
-    <Content Include="Content\themes\base\button.css" />
-    <Content Include="Content\themes\base\core.css" />
-    <Content Include="Content\themes\base\datepicker.css" />
-    <Content Include="Content\themes\base\dialog.css" />
-    <Content Include="Content\themes\base\draggable.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\jquery-ui.min.css" />
-    <Content Include="Content\themes\base\menu.css" />
-    <Content Include="Content\themes\base\progressbar.css" />
-    <Content Include="Content\themes\base\resizable.css" />
-    <Content Include="Content\themes\base\selectable.css" />
-    <Content Include="Content\themes\base\selectmenu.css" />
-    <Content Include="Content\themes\base\slider.css" />
-    <Content Include="Content\themes\base\sortable.css" />
-    <Content Include="Content\themes\base\spinner.css" />
-    <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
-    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\themes\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
     <Content Include="Content\themes\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
     <Content Include="Content\themes\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
@@ -150,9 +126,7 @@
     <Content Include="Content\themes\cupertino\jquery-ui-1.9.2.custom.css" />
     <Content Include="Content\themes\cupertino\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="packages.config" />
     <Content Include="XML\ProjectList.xml" />
-    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -196,13 +170,17 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Scripts\jquery-1.12.4.min.map" />
     <Content Include="Views\PriceCalculation\index.cshtml" />
     <Content Include="Views\PriceCalculation\ViewPagePriceCalculation.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\AddEditProject.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

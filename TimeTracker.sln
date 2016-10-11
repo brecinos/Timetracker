@@ -1,12 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "Mvc3Razor\TimeTracker.csproj", "{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F5BA1C0-0155-41B8-BBFB-A385597D75C9}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\YM1D0PIO.I2U\description.html = ..\..\..\..\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\YM1D0PIO.I2U\description.html
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "Mvc3Razor\TimeTracker.csproj", "{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerXML.Helper", "TrackerXML.Helper\TrackerXML.Helper.csproj", "{CC296CF6-1494-4E65-B742-5F647897B29B}"
 EndProject

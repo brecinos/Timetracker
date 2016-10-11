@@ -1,8 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
 namespace Mvc3Razor.Models {
-    public class UserModel {
+    public class UserModel 
+    {
+        public ObjectId _id { get; set; }
 
         [Required]
         [StringLength(6, MinimumLength = 3)]
@@ -25,13 +34,13 @@ namespace Mvc3Razor.Models {
         [Required]
         [StringLength(4, MinimumLength=2)]
         public string EmployeeCode { get; set; }
-
-
+        
     }
 
     public class Users {
 
         public Users() {
+
             _usrList.Add(new UserModel
             {
                 UserName = "BenM",
@@ -48,6 +57,9 @@ namespace Mvc3Razor.Models {
                 City = "Boston",
                 EmployeeCode = "E102"
             });
+
+            UserRepositary T= new UserRepositary();
+            
         }
 
         public List<UserModel> _usrList = new List<UserModel>();
