@@ -11,48 +11,39 @@ namespace Mvc3Razor.Models
 {
 
     public class UserRepositary : IUserRepositary
-    {
-        ObjectId id = new ObjectId();
+    {        
 
-        MongoClient client = null;
-        
-        MongoServer server = null;
-        MongoDatabaseSettings ser = null;
-        MongoDatabase database = null;
-        MongoCollection UserDetailscollection = null;
-
-        string connectionString = "mongodb://localhost";
-        private List<UserModel> _UserList = new List<UserModel>();
+        private MongoClient _client = null;        
+        private MongoServer _server = null;        
+        private MongoDatabase _database = null;
+        private MongoCollection _UserDetailscollection = null;
+        const string _ConnectionString = "mongodb://localhost/?safe=true";
 
         public UserRepositary()
         {
             try
-            {
-
-                //ObjectId id = new ObjectId();   
-                const string ConnectionString = "mongodb://localhost/?safe=true";
-                var server = MongoServer.Create(ConnectionString);
-                var blog = server.GetDatabase("blog");
-              
-                var posts = blog.GetCollection<UserModel>("UserModel");
-
-                var firstPost = new UserModel
-                    {
-                            UserName = "BenM",
-                            FirstName = "Ben",
-                            LastName = "Miller",
-                            City = "Seattle",
-                            EmployeeCode = "E101"
-                        };   
-          
-                posts.Save(firstPost);                               
+            {                                
+                _server = MongoServer.Create(_ConnectionString);
+                _database = _server.GetDatabase("blog");                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-    }     
+       
+        MongoCollection IUserRepositary.getCollection
+        {
+            get { 
+                
+                if (_UserDetailscollection == null)
+                {
+                    //load configured plan from DB
+                    _UserDetailscollection = _database.GetCollection<UserModel>("UserModel");
+                }
 
-
-}
+                return _UserDetailscollection;                        
+               }                    
+         }
+    }
+}     

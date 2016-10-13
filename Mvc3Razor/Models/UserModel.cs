@@ -41,34 +41,21 @@ namespace Mvc3Razor.Models {
         
     }
 
-    public class Users {
-
-        ObjectId id = new ObjectId();
-        MongoClient client = null;
-        MongoServer server = null;
-        MongoDatabaseSettings ser = null;
-        MongoDatabase database = null;
-        MongoCollection UserDetailscollection = null;
-
-        string connectionString = "mongodb://localhost";
+    public class Users 
+    {
+       
+        MongoCollection UserDetailscollection = null;        
+        private IUserRepositary _configData = new UserRepositary();        
         private List<UserModel> _UserList = new List<UserModel>();
-
+        
         public Users() 
-        {                  
-
-            try
-            {         
-                server = MongoServer.Create(connectionString);
-                var blog = server.GetDatabase("blog");
-                UserDetailscollection = blog.GetCollection<UserModel>("UserModel");
-
-            }
-            catch (Exception ex)
+        {                                                   
+            UserDetailscollection = _configData.getCollection;
+            if (UserDetailscollection == null)
             {
-                Console.WriteLine(ex.Message);
+                throw new ArgumentNullException("config Data Service");
             }
         }
-
 
         public IEnumerable<UserModel> GetAllUsers()
         {
