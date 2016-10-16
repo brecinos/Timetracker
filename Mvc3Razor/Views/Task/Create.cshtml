@@ -1,0 +1,143 @@
+﻿@model Mvc3Razor.Models.TaskModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function ()
+    {        
+        $("#due_date").datepicker({ dateFormat: 'dd/mm/yy' });
+     
+    });
+
+</script>
+<style type="text/css">
+    .ui-datepicker {
+        font-size: 8pt !important;
+    }
+
+    .ui-button {
+        font-size: 10pt !important;
+    }
+
+    .ui-tabs {
+        font-size: 10pt !important;
+    }
+</style>
+
+<h2>Create</h2>
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Fields</legend>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Item)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Item)
+                @Html.ValidationMessageFor(model => model.Item)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Status)
+            </div>
+
+            @{
+        List<SelectListItem> listItems = new List<SelectListItem>();
+        listItems.Add(new SelectListItem
+             {
+                 Text = "Created",
+                 Value = "Created",
+                 Selected = true
+             });
+        listItems.Add(new SelectListItem
+             {
+                 Text = "Assigned",
+                 Value = "Assigned"                 
+             });
+        listItems.Add(new SelectListItem
+             {
+                 Text = "Terminated",
+                 Value = "Terminated"
+             });
+
+        listItems.Add(new SelectListItem
+        {
+            Text = "Expired",
+            Value = "Expired",
+            
+        });
+             
+            }
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.Status, listItems, "-- Select Status --")
+            </div>
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Priorized)
+            </div>
+
+            @{
+        List<SelectListItem> listItems1 = new List<SelectListItem>();
+        listItems1.Add(new SelectListItem
+             {
+                 Text = "Very High",
+                 Value = "Very High",
+                 Selected = true
+             });
+        listItems1.Add(new SelectListItem
+             {
+                 Text = "High",
+                 Value = "High"
+             });
+        listItems1.Add(new SelectListItem
+             {
+                 Text = "Medium",
+                 Value = "Medium"
+             });
+
+        listItems1.Add(new SelectListItem
+        {
+            Text = "Low",
+            Value = "Low",
+            
+        });
+
+        listItems1.Add(new SelectListItem
+        {
+            Text = "Very Low",
+            Value = "Very Low",
+            
+        });
+
+            }
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.Priorized, listItems1, "-- Select Priority --")
+            </div>
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Due_Date)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Due_Date, new { id = "due_date" })
+            </div>
+
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+</fieldset>
+
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+

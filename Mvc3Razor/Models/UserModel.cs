@@ -50,7 +50,7 @@ namespace Mvc3Razor.Models {
         
         public Users() 
         {                                                   
-            UserDetailscollection = _configData.getCollection;
+            UserDetailscollection = _configData.getCollectionUserModel;
             if (UserDetailscollection == null)
             {
                 throw new ArgumentNullException("config Data Service");

@@ -9,7 +9,8 @@ using MongoDB.Driver.Builders;
 namespace Mvc3Razor.Models
 {
     public interface IUserRepositary
-    {        
-        MongoCollection getCollection { get; }        
+    {
+        MongoCollection getCollectionUserModel { get; }
+        MongoCollection getCollectionTaskModel { get; }        
     }
 }

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Mvc3Razor.Models.TaskModel>
+
+@{
+    ViewBag.Title = "Tasks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#divTabs").tabs();
+        $("#date").datepicker({ showButtonPanel: true });
+        $("#btnTest").button();
+        $("#date2").datepicker();
+    });
+</script>
+<style type="text/css">
+    .ui-datepicker { font-size:8pt !important}
+    .ui-button { font-size:10pt !important}
+    .ui-tabs { font-size:10pt !important}
+</style>
+ 
+<h2>Tasks</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                Object ID
+            </th>
+            <th>
+                Item
+            </th>
+            
+            <th>
+                Status
+            </th>
+            
+            <th>
+                Priorized
+            </th>
+            <th>
+                Due Date
+            </th>
+            
+        </tr>
+
+    @foreach (var item in Model) {
+    
+        <tr>
+            <td>
+				@Html.ActionLink("Edit", "Edit", new {  id=item.Item  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Item  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Item  })
+            </td>
+            <td>
+                @item._id
+            </td> 
+            <td>
+                @item.Item
+            </td>
+            
+            <td>
+                @item.Status               
+            </td>
+
+            <td>
+                @item.Priorized
+            </td>
+
+            <td>
+                @item.Due_Date
+            </td>
+          
+        </tr>
+    
+    }
+
+    </table>
+
+
