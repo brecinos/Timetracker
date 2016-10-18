@@ -1,10 +1,12 @@
-﻿@model IEnumerable<Mvc3Razor.Models.TaskModel>
+﻿@model IEnumerable<Mvc3Razor.Models.UserModel>
 
 @{
-    ViewBag.Title = "Tasks";
+    ViewBag.Title = "Member/Users";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-                      <h2>Tasks</h2>
+
+    <h2>Member/Users</h2>
+
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -30,49 +32,48 @@
                 Object ID
             </th>
             <th>
-                Item
-            </th>
-            
-            <th>
-                Status
-            </th>
-            
-            <th>
-                Priorized
+                UserName
             </th>
             <th>
-                Due Date
+                FirstName
             </th>
-            
+            <th>
+                LastName
+            </th>
+            <th>
+                City
+            </th>
+            <th>Employee Code 
+                </th>
+
         </tr>
 
     @foreach (var item in Model) {
     
         <tr>
             <td>
-				@Html.ActionLink("Edit", "Edit", new {  id=item.Item  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Item  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Item  })
+				@Html.ActionLink("Edit", "Edit", new {  id=item.UserName  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.UserName  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.UserName  })
             </td>
             <td>
                 @item._id
             </td> 
             <td>
-                @item.Item
+                @item.UserName
             </td>
-            
             <td>
-                @item.Status               
+                @item.FirstName
             </td>
-
             <td>
-                @item.Priorized
+                @item.LastName
             </td>
-
             <td>
-                @item.Due_Date
+                @item.City
             </td>
-          
+            <td>
+                @item.EmployeeCode
+                </td>
         </tr>
     
     }

@@ -10,12 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "Mvc3Razor\TimeTracker.csproj", "{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerXML.Helper", "TrackerXML.Helper\TrackerXML.Helper.csproj", "{CC296CF6-1494-4E65-B742-5F647897B29B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopEnvironmentManager", "DesktopEnvironmentManager\DesktopEnvironmentManager.csproj", "{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerWebConsole", "TimeTrackerWebConsole\TimeTrackerWebConsole.csproj", "{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,18 +20,6 @@ Global
 		{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0278D5CD-9A99-4866-8FC4-F7C16C8A26E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC296CF6-1494-4E65-B742-5F647897B29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC296CF6-1494-4E65-B742-5F647897B29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC296CF6-1494-4E65-B742-5F647897B29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC296CF6-1494-4E65-B742-5F647897B29B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D86E4D2E-586D-4C70-A442-B79ABC64C5F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EFC3F82-9797-4F7D-B70C-C93D37A14B76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
