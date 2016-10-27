@@ -92,7 +92,6 @@ namespace Mvc3Razor.Models {
             return SearchTask;
         }
 
-
         public bool Update(string objectid, TaskModel UM)
         {
             UpdateBuilder upBuilder = MongoDB.Driver.Builders.Update
@@ -105,7 +104,6 @@ namespace Mvc3Razor.Models {
 
             return true;
         }
-
 
         public bool Remove(string objectid)
         {

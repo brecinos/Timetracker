@@ -10,7 +10,9 @@ namespace Mvc3Razor.Models
 {
     public interface IUserRepositary
     {
-        MongoCollection getCollectionUserModel { get; }
-        MongoCollection getCollectionTaskModel { get; }        
+        MongoCollection getCollectionUserModel   { get; }
+        MongoCollection getCollectionTaskModel   { get; }
+        MongoCollection getCollectionAssignModel { get; }        
+        
     }
 }

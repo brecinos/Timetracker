@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Mvc3Razor.Models.AssignModel>
+
+@{
+    ViewBag.Title = "Assign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+                      <h2>Tasks</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#divTabs").tabs();
+        $("#date").datepicker({ showButtonPanel: true });
+        $("#btnTest").button();
+        $("#date2").datepicker();
+    });
+</script>
+<style type="text/css">
+    .ui-datepicker { font-size:8pt !important}
+    .ui-button { font-size:10pt !important}
+    .ui-tabs { font-size:10pt !important}
+</style>
+ 
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                Object ID
+            </th>
+            <th>
+                User
+            </th>
+            
+            <th>
+                Task
+            </th>
+            
+            <th>
+                Priorized
+            </th>
+            <th>
+                Due Date
+            </th>
+            
+        </tr>
+
+    @foreach (var item in Model) {
+    
+        <tr>            
+            <td>
+                @item._id
+            </td> 
+            <td>
+                @item.User
+            </td>
+            
+            <td>
+                @item.Task               
+            </td>
+
+            <td>
+                @item.Priorized
+            </td>
+
+            <td>
+                @item.Due_Date
+            </td>
+          
+        </tr>
+    
+    }
+
+    </table>
+
+

@@ -17,6 +17,7 @@ namespace Mvc3Razor.Models
         private MongoServer _server = null;        
         private MongoDatabase _database = null;
         private MongoCollection _Detailscollection = null;
+
         const string _ConnectionString = "mongodb://localhost/?safe=true";
 
         public UserRepositary()
@@ -60,5 +61,17 @@ namespace Mvc3Razor.Models
             }
         }
 
+        MongoCollection IUserRepositary.getCollectionAssignModel
+        {
+            get
+            {
+                if (_Detailscollection == null)
+                {
+                    //load configured plan from DB
+                    _Detailscollection = _database.GetCollection<AssignModel>("AssignModel");
+                }
+                return _Detailscollection;
+            }        
+        }
     }
 }     
